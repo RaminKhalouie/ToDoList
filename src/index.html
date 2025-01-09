@@ -17,27 +17,64 @@
 </head>
 
 <body class="font-Roboto w-full h-screen flex">
-    <div class="fixed z-10 top-4 left-4 w-fit *:flex *:w-8 cursor-pointer *:mb-1 *:h-1 *:rounded-lg *:bg-red-400 lg:hidden"
+    <!-- Toggle menu -->
+    <div class="fixed z-20 top-4 left-4 w-fit *:flex *:w-8 cursor-pointer *:mb-1 *:h-1 *:rounded-lg *:bg-white lg:hidden"
         id="toggle">
         <span></span>
         <span></span>
         <span></span>
     </div>
+    <!-- Sidebar -->
     <aside
-        class="h-full w-[300px] fixed top-0 left-0 bg-bgDark text-white transition-all duration-300 -translate-x-full lg:translate-x-0 lg:static"
+        class="h-full z-10 w-[300px] fixed top-0 left-0 bg-bgDark text-white transition-all duration-300 -translate-x-full lg:translate-x-0 lg:static"
         id="menu">
-
     </aside>
+    <!-- Main -->
     <main class="w-full h-screen bg-fixed bg-cover bg-top p-8">
         <nav class="flex justify-between items-center">
-            <div class="flex gap-2 justify-center items-center">
+            <div class="flex gap-2 justify-center items-center backdrop-blur-2xl p-2">
                 <img src="assets/images/icons/to-do.png" alt="" class="w-12 h-12 object-cover">
                 <div class="flex flex-col *:text-white">
                     <strong class="text-2xl">My Day</strong>
                     <strong id="date" class="font-medium">Date</strong>
                 </div>
             </div>
-            <div>d</div>
+            <div class="w-8 h-8 bg-bgDark rounded-md cursor-pointer  relative  before:contents-[''] before:flex before:absolute before:top-3 before:right-[2rem]  before:bg-transparent  before:border-8 before:border-l-bgDark before:border-t-transparent before:border-b-transparent before:border-r-transparent before:hidden" id="settings">
+                <img src="assets/images/icons/settings.svg" alt="" class="w-full h-full object-cover">
+                <div
+                    class="w-[200px] h-[300px] overflow-y-scroll p-2 bg-bgDark absolute top-[0.5rem] right-[3rem] rounded grid grid-cols-3 gap-1 *:w-full *:h-full *:object-cover hidden ">
+                    <img src=" assets/images/backgrounds/img1.jpg" alt="" data-cs="bg-img-1">
+                    <img src="assets/images/backgrounds/img2.jpg" alt="" data-cs="bg-img-2">
+                    <img src="assets/images/backgrounds/img3.jpg" alt="" data-cs="bg-img-3">
+                    <img src="assets/images/backgrounds/img4.jpg" alt="" data-cs="bg-img-4">
+                    <img src="assets/images/backgrounds/img5.jpg" alt="" data-cs="bg-img-5">
+                    <img src="assets/images/backgrounds/img6.jpg" alt="" data-cs="bg-img-6">
+                    <img src="assets/images/backgrounds/img7.jpg" alt="" data-cs="bg-img-7">
+                    <img src="assets/images/backgrounds/img8.jpg" alt="" data-cs="bg-img-8">
+                    <img src="assets/images/backgrounds/img9.jpg" alt="" data-cs="bg-img-9">
+                    <img src="assets/images/backgrounds/img10.jpg" alt="" data-cs="bg-img-10">
+                    <img src="assets/images/backgrounds/img11.jpg" alt="" data-cs="bg-img-11">
+                    <img src="assets/images/backgrounds/img12.jpg" alt="" data-cs="bg-img-12">
+                    <img src="assets/images/backgrounds/img13.jpg" alt="" data-cs="bg-img-13">
+                    <img src="assets/images/backgrounds/img14.jpg" alt="" data-cs="bg-img-14">
+                    <img src="assets/images/backgrounds/img15.jpg" alt="" data-cs="bg-img-15">
+                    <img src="assets/images/backgrounds/img16.jpg" alt="" data-cs="bg-img-16">
+                    <img src="assets/images/backgrounds/img17.jpg" alt="" data-cs="bg-img-17">
+                    <img src="assets/images/backgrounds/img18.jpg" alt="" data-cs="bg-img-18">
+                    <img src="assets/images/backgrounds/img19.jpg" alt="" data-cs="bg-img-19">
+                    <img src="assets/images/backgrounds/img20.jpg" alt="" data-cs="bg-img-20">
+                    <img src="assets/images/backgrounds/img21.jpg" alt="" data-cs="bg-img-21">
+                    <img src="assets/images/backgrounds/img22.jpg" alt="" data-cs="bg-img-22">
+                    <img src="assets/images/backgrounds/img23.jpg" alt="" data-cs="bg-img-23">
+                    <img src="assets/images/backgrounds/img24.jpg" alt="" data-cs="bg-img-24">
+                    <img src="assets/images/backgrounds/img25.jpg" alt="" data-cs="bg-img-25">
+                    <img src="assets/images/backgrounds/img26.jpg" alt="" data-cs="bg-img-26">
+                    <img src="assets/images/backgrounds/img27.jpg" alt="" data-cs="bg-img-27">
+                    <img src="assets/images/backgrounds/img28.jpg" alt="" data-cs="bg-img-28">
+                    <img src="assets/images/backgrounds/img29.jpg" alt="" data-cs="bg-img-29">
+                    <img src="assets/images/backgrounds/img30.jpg" alt="" data-cs="bg-img-30">
+                </div>
+            </div>
         </nav>
     </main>
     <!-- js -->
