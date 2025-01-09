@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "Roboto": "Roboto",
+        "Rubik": "Rubik Vinyl"
+      }
+    },
   },
   plugins: [],
 }
