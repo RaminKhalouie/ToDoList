@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List - Ramin Khalouie</title>
     <!-- fav icon -->
-    <link rel="shortcut icon" href="assets/images/icons/to-do.pnggit " type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/icons/to-do.png" type="image/x-icon">
     <!-- styles -->
     <link rel="stylesheet" href="assets/styles/master.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,8 +16,30 @@
         rel="stylesheet">
 </head>
 
-<body class="font-Roboto">
+<body class="font-Roboto w-full h-screen flex">
+    <div class="fixed z-10 top-4 left-4 w-fit *:flex *:w-8 cursor-pointer *:mb-1 *:h-1 *:rounded-lg *:bg-red-400 lg:hidden"
+        id="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <aside
+        class="h-full w-[300px] fixed top-0 left-0 bg-bgDark text-white transition-all duration-300 -translate-x-full lg:translate-x-0 lg:static"
+        id="menu">
 
+    </aside>
+    <main class="w-full h-screen bg-fixed bg-cover bg-top p-8">
+        <nav class="flex justify-between items-center">
+            <div class="flex gap-2 justify-center items-center">
+                <img src="assets/images/icons/to-do.png" alt="" class="w-12 h-12 object-cover">
+                <div class="flex flex-col *:text-white">
+                    <strong class="text-2xl">My Day</strong>
+                    <strong id="date" class="font-medium">Date</strong>
+                </div>
+            </div>
+            <div>d</div>
+        </nav>
+    </main>
     <!-- js -->
     <script src="assets/js/main.js"></script>
 </body>

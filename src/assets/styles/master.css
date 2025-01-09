@@ -554,10 +554,323 @@ video {
   display: none;
 }
 
+.fixed {
+  position: fixed;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.left-4 {
+  left: 1rem;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-12 {
+  height: 3rem;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.-translate-x-full {
+  --tw-translate-x: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.bg-bgDark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(40 40 40 / var(--tw-bg-opacity, 1));
+}
+
+.bg-img-1 {
+  background-image: url("../images/backgrounds/img1.jpg");
+}
+
+.bg-img-10 {
+  background-image: url("../images/backgrounds/img10.jpg");
+}
+
+.bg-img-11 {
+  background-image: url("../images/backgrounds/img11.jpg");
+}
+
+.bg-img-12 {
+  background-image: url("../images/backgrounds/img12.jpg");
+}
+
+.bg-img-13 {
+  background-image: url("../images/backgrounds/img13.jpg");
+}
+
+.bg-img-14 {
+  background-image: url("../images/backgrounds/img14.jpg");
+}
+
+.bg-img-15 {
+  background-image: url("../images/backgrounds/img15.jpg");
+}
+
+.bg-img-16 {
+  background-image: url("../images/backgrounds/img16.jpg");
+}
+
+.bg-img-17 {
+  background-image: url("../images/backgrounds/img17.jpg");
+}
+
+.bg-img-18 {
+  background-image: url("../images/backgrounds/img18.jpg");
+}
+
+.bg-img-19 {
+  background-image: url("../images/backgrounds/img19.jpg");
+}
+
+.bg-img-2 {
+  background-image: url("../images/backgrounds/img2.jpg");
+}
+
+.bg-img-20 {
+  background-image: url("../images/backgrounds/img20.jpg");
+}
+
+.bg-img-21 {
+  background-image: url("../images/backgrounds/img21.jpg");
+}
+
+.bg-img-22 {
+  background-image: url("../images/backgrounds/img22.jpg");
+}
+
+.bg-img-23 {
+  background-image: url("../images/backgrounds/img23.jpg");
+}
+
+.bg-img-24 {
+  background-image: url("../images/backgrounds/img24.jpg");
+}
+
+.bg-img-25 {
+  background-image: url("../images/backgrounds/img25.jpg");
+}
+
+.bg-img-26 {
+  background-image: url("../images/backgrounds/img26.jpg");
+}
+
+.bg-img-27 {
+  background-image: url("../images/backgrounds/img27.jpg");
+}
+
+.bg-img-28 {
+  background-image: url("../images/backgrounds/img28.jpg");
+}
+
+.bg-img-29 {
+  background-image: url("../images/backgrounds/img29.jpg");
+}
+
+.bg-img-3 {
+  background-image: url("../images/backgrounds/img3.jpg");
+}
+
+.bg-img-30 {
+  background-image: url("../images/backgrounds/img30.jpg");
+}
+
+.bg-img-4 {
+  background-image: url("../images/backgrounds/img4.jpg");
+}
+
+.bg-img-5 {
+  background-image: url("../images/backgrounds/img5.jpg");
+}
+
+.bg-img-6 {
+  background-image: url("../images/backgrounds/img6.jpg");
+}
+
+.bg-img-7 {
+  background-image: url("../images/backgrounds/img7.jpg");
+}
+
+.bg-img-8 {
+  background-image: url("../images/backgrounds/img8.jpg");
+}
+
+.bg-img-9 {
+  background-image: url("../images/backgrounds/img9.jpg");
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+.bg-bottom {
+  background-position: bottom;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.bg-top {
+  background-position: top;
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
 .font-Roboto {
   font-family: Roboto;
 }
 
-.font-Rubik {
-  font-family: Rubik Vinyl;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.\*\:mb-1 > * {
+  margin-bottom: 0.25rem;
+}
+
+.\*\:flex > * {
+  display: flex;
+}
+
+.\*\:h-1 > * {
+  height: 0.25rem;
+}
+
+.\*\:w-8 > * {
+  width: 2rem;
+}
+
+.\*\:rounded-lg > * {
+  border-radius: 0.5rem;
+}
+
+.\*\:border > * {
+  border-width: 1px;
+}
+
+.\*\:bg-red-400 > * {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity, 1));
+}
+
+.\*\:text-white > * {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 1024px) {
+  .lg\:static {
+    position: static;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+
+  .lg\:translate-x-0 {
+    --tw-translate-x: 0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
 }
