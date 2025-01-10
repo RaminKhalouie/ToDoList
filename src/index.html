@@ -31,6 +31,7 @@
     </aside>
     <!-- Main -->
     <main class="w-full h-screen bg-fixed bg-cover bg-top p-8">
+        <!-- Nav -->
         <nav class="flex justify-between items-center">
             <div class="flex gap-2 justify-center items-center backdrop-blur-2xl p-2">
                 <img src="assets/images/icons/to-do.png" alt="" class="w-12 h-12 object-cover">
@@ -39,7 +40,8 @@
                     <strong id="date" class="font-medium">Date</strong>
                 </div>
             </div>
-            <div class="w-8 h-8 bg-bgDark rounded-md cursor-pointer  relative  before:contents-[''] before:flex before:absolute before:top-3 before:right-[2rem]  before:bg-transparent  before:border-8 before:border-l-bgDark before:border-t-transparent before:border-b-transparent before:border-r-transparent before:hidden" id="settings">
+            <div class="w-8 h-8 z-20 bg-bgDark rounded-md cursor-pointer  relative  before:contents-[''] before:flex before:absolute before:top-3 before:right-[2rem]  before:bg-transparent  before:border-8 before:border-l-bgDark before:border-t-transparent before:border-b-transparent before:border-r-transparent before:hidden"
+                id="settings">
                 <img src="assets/images/icons/settings.svg" alt="" class="w-full h-full object-cover">
                 <div
                     class="w-[200px] h-[300px] overflow-y-scroll p-2 bg-bgDark absolute top-[0.5rem] right-[3rem] rounded grid grid-cols-3 gap-1 *:w-full *:h-full *:object-cover hidden ">
@@ -76,6 +78,14 @@
                 </div>
             </div>
         </nav>
+        <!-- Add -->
+        <div class="my-4 relative">
+            <input type="text" name="task" id="task"
+                class="outline-none border-none flex w-full min-h-12 bg-bgDark bg-opacity-40 p-4 text-white backdrop-blur-lg text-xl placeholder:text-bgDark rounded-lg"
+                placeholder="What's on your mind?">
+            <img src="assets/images/icons/send.svg" alt="" id="add"
+                class="absolute w-8 h-8 top-1/2 -translate-y-1/2 right-2 cursor-pointer transition-all duration-300 hover:scale-110">
+        </div>
     </main>
     <!-- js -->
     <script src="assets/js/main.js"></script>
