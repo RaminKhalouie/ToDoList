@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base{
-    #settings > div::-webkit-scrollbar{
+    #settings > div::-webkit-scrollbar , #sec::-webkit-scrollbar{
         @apply hidden;
     }
 }

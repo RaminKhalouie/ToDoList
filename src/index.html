@@ -30,7 +30,7 @@
         id="menu">
     </aside>
     <!-- Main -->
-    <main class="w-full h-screen bg-fixed bg-cover bg-top p-8">
+    <main class="w-full h-screen bg-fixed bg-cover bg-top p-8 flex flex-col">
         <!-- Nav -->
         <nav class="flex justify-between items-center">
             <div class="flex gap-2 justify-center items-center backdrop-blur-2xl p-2">
@@ -84,8 +84,25 @@
                 class="outline-none border-none flex w-full min-h-12 bg-bgDark bg-opacity-40 p-4 text-white backdrop-blur-lg text-xl placeholder:text-bgDark rounded-lg"
                 placeholder="What's on your mind?">
             <img src="assets/images/icons/send.svg" alt="" id="add"
-                class="absolute w-8 h-8 top-1/2 -translate-y-1/2 right-2 cursor-pointer transition-all duration-300 hover:scale-110">
+                class="absolute w-8 h-8 top-1/2 -translate-y-1/2 right-2 cursor-pointer transition-all duration-300 hover:scale-110 hidden">
         </div>
+        <!-- List -->
+        <section class="relative flex-grow-1 h-full overflow-scroll" id="sec">
+            <!-- incomming -->
+            <ul id="incomming" class="flex flex-col gap-2"></ul>
+            <!-- done -->
+            <ul id="done" class="flex flex-col gap-2 mt-4"></ul>
+            <!-- Empty List -->
+            <div class="flex justify-center items-center select-none" id="no-item">
+                <div
+                    class=" flex flex-col items-center gap-2 p-4 rounded-xl bg-bgDark bg-opacity-60 w-[300px] text-white">
+                    <img src="assets/images/icons/pyico.svg" alt="" class="w-24">
+                    <strong class="text-2xl text-center">Focus on your day</strong>
+                    <p class="text-center">Get things done with My Day,a list that refreshes every day.</p>
+                </div>
+            </div>
+
+        </section>
     </main>
     <!-- js -->
     <script src="assets/js/main.js"></script>

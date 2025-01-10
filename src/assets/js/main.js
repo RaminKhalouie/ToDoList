@@ -86,3 +86,70 @@ images.forEach((el) => {
         main.classList.add(el.dataset.cs);
     })
 });
+
+// ToDos
+const TODO_KEY = 'todos';
+const TODO_LIST = JSON.parse(localStorage.getItem(TODO_KEY)) ? JSON.parse(localStorage.getItem(TODO_KEY)) : [];
+const add = document.getElementById('add');
+const task = document.getElementById('task');
+const newList = document.getElementById('incomming');
+const doneList = document.getElementById('done');
+const noItem = document.getElementById('no-item');
+
+if (TODO_LIST == null || TODO_LIST.length == 0) {
+    noItem.style.display = 'flex';
+} else {
+    noItem.style.display = 'none';
+
+}
+
+
+task.addEventListener('input', (e) => {
+    if (task.value.length > 0) {
+        add.classList.remove('hidden');
+    } else {
+        add.classList.add('hidden');
+    }
+
+});
+
+task.addEventListener('keypress', (e) => {
+    if (e.key == 'Enter' && task.value.length > 0) {
+        addNewTask();
+    }
+});
+
+add.addEventListener('click', () => {
+    addNewTask();
+});
+function addNewTask() {
+    const newTask = new taskObj(task.value);
+    task.value = '';
+    add.classList.add('hidden');
+    TODO_LIST.push(newTask);
+    localStorage.setItem(TODO_KEY, JSON.stringify(TODO_LIST));
+    addToList(newTask);
+    noItem.style.display = 'none';
+}
+
+// Task object
+function taskObj(txt) {
+    this.id = new Date().getTime();
+    this.text = txt;
+    this.done = false;
+    this.important = false;
+}
+
+function addToList(item, list = newList) {
+    const li = document.createElement('li');
+    li.innerHTML = `<div class="flex gap-2  justify-between items-center p-4 bg-bgDark text-white rounded-lg">
+                        <img src="assets/images/icons/uncheck.svg" alt="" class="w-6 h-6 cursor-pointer">
+                        <p class="flex-grow text-center">${item.text}</p>
+                        <div class="flex gap-1 justify-center items-center">
+                            <img src="assets/images/icons/important.svg" alt="" class="w-6 h-6 cursor-pointer">
+                            <img src="assets/images/icons/delete.svg" alt="" class="w-6 h-6 cursor-pointer">
+                        </div>
+                    </div>`;
+    list.appendChild(li);
+}
+
