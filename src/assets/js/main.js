@@ -171,10 +171,24 @@ function addToList(item) {
 
 
 function doneTask(item) {
-
+    let x = TODO_LIST.findIndex((i) => {
+        if (i.id == item) {
+            return i;
+        }
+    });
+    TODO_LIST[x].done = true;
+    localStorage.setItem(TODO_KEY, JSON.stringify(TODO_LIST));
+    loadItems();
 }
 function unDoneTask(item) {
-
+    let x = TODO_LIST.findIndex((i) => {
+        if (i.id == item) {
+            return i;
+        }
+    });
+    TODO_LIST[x].done = false;
+    localStorage.setItem(TODO_KEY, JSON.stringify(TODO_LIST));
+    loadItems();
 }
 
 function deleteTask(item) {
