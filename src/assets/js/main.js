@@ -96,6 +96,17 @@ const newList = document.getElementById('incomming');
 const doneList = document.getElementById('done');
 const noItem = document.getElementById('no-item');
 
+// Filter Tasks
+const allTasks = document.getElementById('all-task');
+const newTasks = document.getElementById('new-task');
+const importantTasks = document.getElementById('important-task');
+const doneTasks = document.getElementById('done-task');
+let flagTask = 'allTasks';
+allTasks.addEventListener('click', () => { flagTask = 'allTasks'; loadItems(); allTasks.classList.add('bg-slate-700'); newTasks.classList.remove('bg-slate-700'); importantTasks.classList.remove('bg-slate-700'); doneTasks.classList.remove('bg-slate-700'); });
+newTasks.addEventListener('click', () => { flagTask = 'newTasks'; loadItems(); newTasks.classList.add('bg-slate-700'); allTasks.classList.remove('bg-slate-700'); importantTasks.classList.remove('bg-slate-700'); doneTasks.classList.remove('bg-slate-700'); });
+importantTasks.addEventListener('click', () => { flagTask = 'importantTasks'; loadItems(); importantTasks.classList.add('bg-slate-700'); newTasks.classList.remove('bg-slate-700'); allTasks.classList.remove('bg-slate-700'); doneTasks.classList.remove('bg-slate-700'); });
+doneTasks.addEventListener('click', () => { flagTask = 'doneTasks'; loadItems(); doneTasks.classList.add('bg-slate-700'); newTasks.classList.remove('bg-slate-700'); importantTasks.classList.remove('bg-slate-700'); allTasks.classList.remove('bg-slate-700'); });
+
 loadItems();
 function loadItems() {
     while (newList.firstElementChild) {
@@ -109,9 +120,32 @@ function loadItems() {
         noItem.style.display = 'flex';
     } else {
         noItem.style.display = 'none';
-        TODO_LIST.forEach((item) => {
-            addToList(item);
-        });
+        // TODO_LIST.forEach((item) => {
+        //     addToList(item);
+        // });
+        if (flagTask == 'allTasks') {
+            TODO_LIST.forEach((item) => {
+                addToList(item);
+            });
+        } else if (flagTask == 'newTasks') {
+            TODO_LIST.forEach((item) => {
+                if (item.done == false) {
+                    addToList(item);
+                }
+            });
+        } else if (flagTask == 'importantTasks') {
+            TODO_LIST.forEach((item) => {
+                if (item.imporatnt == true) {
+                    addToList(item);
+                }
+            });
+        } else if (flagTask == 'doneTasks') {
+            TODO_LIST.forEach((item) => {
+                if (item.done == true) {
+                    addToList(item);
+                }
+            });
+        }
     }
 }
 
