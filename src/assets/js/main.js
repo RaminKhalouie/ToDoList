@@ -96,11 +96,23 @@ const newList = document.getElementById('incomming');
 const doneList = document.getElementById('done');
 const noItem = document.getElementById('no-item');
 
-if (TODO_LIST == null || TODO_LIST.length == 0) {
-    noItem.style.display = 'flex';
-} else {
-    noItem.style.display = 'none';
+loadItems();
+function loadItems() {
+    while (newList.firstElementChild) {
+        newList.removeChild(newList.firstElementChild);
+    }
+    while (doneList.firstElementChild) {
+        doneList.removeChild(doneList.firstElementChild);
+    }
 
+    if (TODO_LIST == null || TODO_LIST.length == 0) {
+        noItem.style.display = 'flex';
+    } else {
+        noItem.style.display = 'none';
+        TODO_LIST.forEach((item) => {
+            addToList(item);
+        });
+    }
 }
 
 
@@ -140,16 +152,39 @@ function taskObj(txt) {
     this.important = false;
 }
 
-function addToList(item, list = newList) {
+function addToList(item) {
     const li = document.createElement('li');
     li.innerHTML = `<div class="flex gap-2  justify-between items-center p-4 bg-bgDark text-white rounded-lg">
-                        <img src="assets/images/icons/uncheck.svg" alt="" class="w-6 h-6 cursor-pointer">
-                        <p class="flex-grow text-center">${item.text}</p>
+                        ${item.done ? '<img src="assets/images/icons/uncheck.svg" alt="" class="w-6 h-6 cursor-pointer" onclick="unDoneTask(' + item.id + ')">' : '<img src="assets/images/icons/checked.svg" alt="" class="w-6 h-6 cursor-pointer" onclick="doneTask(' + item.id + ')">'}
+                        <p class="flex-grow text-center ${item.done && 'line-through'}">${item.text}</p>
                         <div class="flex gap-1 justify-center items-center">
                             <img src="assets/images/icons/important.svg" alt="" class="w-6 h-6 cursor-pointer">
-                            <img src="assets/images/icons/delete.svg" alt="" class="w-6 h-6 cursor-pointer">
+                            <img src="assets/images/icons/delete.svg" alt="" class="w-6 h-6 cursor-pointer" onclick="deleteTask(${item.id})">
                         </div>
                     </div>`;
-    list.appendChild(li);
+    if (item.done) {
+        doneList.appendChild(li);
+    } else {
+        newList.appendChild(li);
+    }
 }
 
+
+function doneTask(item) {
+
+}
+function unDoneTask(item) {
+
+}
+
+function deleteTask(item) {
+    let x = TODO_LIST.findIndex((i) => {
+        if (i.id == item) {
+            return i;
+        }
+    });
+    TODO_LIST.splice(x, 1);
+    localStorage.setItem(TODO_KEY, JSON.stringify(TODO_LIST));
+    loadItems();
+
+}
