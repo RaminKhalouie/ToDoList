@@ -158,7 +158,7 @@ function addToList(item) {
                         ${item.done ? '<img src="assets/images/icons/uncheck.svg" alt="" class="w-6 h-6 cursor-pointer" onclick="unDoneTask(' + item.id + ')">' : '<img src="assets/images/icons/checked.svg" alt="" class="w-6 h-6 cursor-pointer" onclick="doneTask(' + item.id + ')">'}
                         <p class="flex-grow text-center ${item.done && 'line-through'}">${item.text}</p>
                         <div class="flex gap-1 justify-center items-center">
-                            <img src="assets/images/icons/important.svg" alt="" class="w-6 h-6 cursor-pointer">
+                            ${item.imporatnt ? '<img src="assets/images/icons/important2.svg" alt="" class="w-6 h-6 cursor-pointer" onclick="unImportant(' + item.id + ')">' : '<img src="assets/images/icons/important.svg" alt="" class="w-6 h-6 cursor-pointer" onclick="important(' + item.id + ')">'}
                             <img src="assets/images/icons/delete.svg" alt="" class="w-6 h-6 cursor-pointer" onclick="deleteTask(${item.id})">
                         </div>
                     </div>`;
@@ -187,6 +187,26 @@ function unDoneTask(item) {
         }
     });
     TODO_LIST[x].done = false;
+    localStorage.setItem(TODO_KEY, JSON.stringify(TODO_LIST));
+    loadItems();
+}
+function important(item) {
+    let x = TODO_LIST.findIndex((i) => {
+        if (i.id == item) {
+            return i;
+        }
+    });
+    TODO_LIST[x].imporatnt = true;
+    localStorage.setItem(TODO_KEY, JSON.stringify(TODO_LIST));
+    loadItems();
+}
+function unImportant(item) {
+    let x = TODO_LIST.findIndex((i) => {
+        if (i.id == item) {
+            return i;
+        }
+    });
+    TODO_LIST[x].imporatnt = false;
     localStorage.setItem(TODO_KEY, JSON.stringify(TODO_LIST));
     loadItems();
 }
